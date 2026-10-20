@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Book Your Adventure — Adventour</title><link rel="stylesheet" href="./assets/css/style.css" /></head>
+<body style="background: linear-gradient(180deg, #0a0e27 0%, #0b1d36 50%, #f8f6f2 100%); min-height: 100vh; overflow-x: hidden;">
+<nav class="site-nav" id="navbar">
+  <a href="./index.html" class="logo-title">ADVENTOUR <span>by Muskan Tiwari</span></a>
+  <ul class="nav-links"><li><a href="./index.html">Home</a></li><li><a href="./index.html#packages">Packages</a></li><li><a href="./index.html#locations">Locations</a></li><li><a href="./info.html">About</a></li><li><a href="./contact.html">Contact</a></li></ul>
+</nav>
+
+<header style="height: 50vh; min-height: 320px; overflow: hidden; background: linear-gradient(135deg, rgba(10,14,39,0.85) 0%, rgba(11,29,54,0.92) 100%), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600&q=80') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;">
+  <div style="position: relative; z-index: 2; padding: 0 24px;">
+    <h1 style="font-family: 'Cinzel Decorative', serif; font-size: clamp(2.5rem, 7vw, 5.5rem); letter-spacing: 8px; text-shadow: 0 4px 30px rgba(212,175,55,0.35);">Book Your Adventure</h1>
+    <p style="color: var(--gold-light); margin-top: 10px; font-size: 1.05rem; letter-spacing: 2px;">A full-registration journey by <strong>Muskan Tiwari</strong></p>
+  </div>
+</header>
+
+<section style="max-width: 880px; margin: -60px auto 80px; padding: 60px 36px; background: #fff; border-radius: 28px; box-shadow: 0 30px 80px rgba(10,14,39,0.15); position: relative; z-index: 3;">
+  <h2 style="font-family: 'Cinzel Decorative', serif; text-align: center; color: var(--deep-navy); margin-bottom: 28px; font-size: 1.8rem;">Journey Registration</h2>
+
+  <form id="travelForm" onsubmit="event.preventDefault(); showConfirmation();" style="display: flex; flex-direction: column; gap: 20px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+      <input type="text" placeholder="First Name *" required style="flex: 1 1 220px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; transition: .2s;" onfocus="this.style.borderColor='#d4af37'" />
+      <input type="text" placeholder="Last Name *" required style="flex: 1 1 220px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; transition: .2s;" onfocus="this.style.borderColor='#d4af37'" />
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+      <input type="email" placeholder="Email Address *" required style="flex: 1 1 300px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; transition: .2s;" onfocus="this.style.borderColor='#d4af37'" />
+      <input type="tel" placeholder="Phone Number *" required style="flex: 1 1 220px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; transition: .2s;" onfocus="this.style.borderColor='#d4af37'" />
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+      <input type="date" placeholder="Check-in Date *" required style="flex: 1 1 200px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; transition: .2s;" onfocus="this.style.borderColor='#d4af37'" />
+      <input type="date" placeholder="Check-out Date *" required style="flex: 1 1 200px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; transition: .2s;" onfocus="this.style.borderColor='#d4af37'" />
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+      <select id="destination" style="flex: 1 1 260px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; color: #555; transition: .2s;" onfocus="this.style.borderColor='#d4af37'" onchange="this.style.color='#222'">
+        <option value="">Choose Destination</option>
+        <option>Bali — Tropical Paradise</option>
+        <option>Switzerland — Alpine Dream</option>
+        <option>Egypt — Pyramid Mystery</option>
+        <option>Kashmir — Heaven on Earth</option>
+        <option>Paris — City of Lights</option>
+        <option>Dubai — Desert Luxury</option>
+        <option>Goa — Beach & Party</option>
+        <option>Kerala — Backwater Bliss</option>
+        <option>Thailand — Temple & Beach</option>
+      </select>
+      <select id="travelers" style="flex: 1 1 160px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; color: #555; transition: .2s;" onfocus="this.style.borderColor='#d4af37'">
+        <option>Travelers: 1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+      </select>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+      <select id="budget" style="flex: 1 1 260px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; color: #555; transition: .2s;" onfocus="this.style.borderColor='#d4af37'">
+        <option>Budget Range</option><option>Under Rs. 10,000</option><option>Rs. 10,000 - 25,000</option><option>Rs. 25,000 - 50,000</option><option>Rs. 50,000 - 1,00,000</option><option>Luxury (No Limit)</option>
+      </select>
+      <select id="mood" style="flex: 1 1 220px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; color: #555; transition: .2s;" onfocus="this.style.borderColor='#d4af37'">
+        <option>Travel Mood</option><option>Romantic Escape</option><option>Adventure & Trek</option><option>Luxury Retreat</option><option>Party & Nightlife</option><option>Spiritual Journey</option><option>Mystery & Hidden Gems</option>
+      </select>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 14px;">
+      <label style="flex: 1 1 200px; display: flex; align-items: center; gap: 10px; background: #f8f6f2; padding: 12px 16px; border-radius: 10px; border: 1px solid #eae6df; cursor: pointer; transition: .2s;" onmouseover="this.style.borderColor='#d4af37'" onmouseout="this.style.borderColor='#eae6df'">
+        <input type="checkbox" name="crazy" value="skydiving" /> <span>Skydiving Add-on</span>
+      </label>
+      <label style="flex: 1 1 200px; display: flex; align-items: center; gap: 10px; background: #f8f6f2; padding: 12px 16px; border-radius: 10px; border: 1px solid #eae6df; cursor: pointer; transition: .2s;" onmouseover="this.style.borderColor='#d4af37'" onmouseout="this.style.borderColor='#eae6df'">
+        <input type="checkbox" name="crazy" value="hotair" /> <span>Hot Air Balloon Ride</span>
+      </label>
+      <label style="flex: 1 1 200px; display: flex; align-items: center; gap: 10px; background: #f8f6f2; padding: 12px 16px; border-radius: 10px; border: 1px solid #eae6df; cursor: pointer; transition: .2s;" onmouseover="this.style.borderColor='#d4af37'" onmouseout="this.style.borderColor='#eae6df'">
+        <input type="checkbox" name="crazy" value="underwater" /> <span>Underwater Photoshoot</span>
+      </label>
+      <label style="flex: 1 1 200px; display: flex; align-items: center; gap: 10px; background: #f8f6f2; padding: 12px 16px; border-radius: 10px; border: 1px solid #eae6df; cursor: pointer; transition: .2s;" onmouseover="this.style.borderColor='#d4af37'" onmouseout="this.style.borderColor='#eae6df'">
+        <input type="checkbox" name="crazy" value="helicopter" /> <span>Helicopter City Tour</span>
+      </label>
+      <label style="flex: 1 1 200px; display: flex; align-items: center; gap: 10px; background: #f8f6f2; padding: 12px 16px; border-radius: 10px; border: 1px solid #eae6df; cursor: pointer; transition: .2s;" onmouseover="this.style.borderColor='#d4af37'" onmouseout="this.style.borderColor='#eae6df'">
+        <input type="checkbox" name="crazy" value="privateisland" /> <span>Private Island Day</span>
+      </label>
+      <label style="flex: 1 1 200px; display: flex; align-items: center; gap: 10px; background: #f8f6f2; padding: 12px 16px; border-radius: 10px; border: 1px solid #eae6df; cursor: pointer; transition: .2s;" onmouseover="this.style.borderColor='#d4af37'" onmouseout="this.style.borderColor='#eae6df'">
+        <input type="checkbox" name="crazy" value="safari" /> <span>Night Safari</span>
+      </label>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 18px;">
+      <select style="flex: 1 1 260px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; color: #555; transition: .2s;" onfocus="this.style.borderColor='#d4af37'">
+        <option>Accommodation Preference</option><option>5-Star Luxury</option><option>Boutique Hotel</option><option>Beachfront Villa</option><option>Mountain Cabin</option><option>Backpacker Hostel</option>
+      </select>
+      <select style="flex: 1 1 260px; padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; color: #555; transition: .2s;" onfocus="this.style.borderColor='#d4af37'">
+        <option>Transport Style</option><option>Private Chauffeur</option><option>Luxury Train</option><option>Domestic Flights</option><option>Self-Drive Rental</option><option>Bicycle & Walk</option>
+      </select>
+    </div>
+
+    <textarea placeholder="Tell us anything wild — dream activities, surprise celebrations, or secret destinations..." rows="3" style="padding: 14px 18px; border: 1.5px solid #ddd; border-radius: 12px; font-family: inherit; resize: vertical; transition: .2s;" onfocus="this.style.borderColor='#d4af37'"></textarea>
+
+    <button type="submit" style="padding: 18px 40px; background: linear-gradient(135deg, #d4af37, #b08a2b); color: #0a0e27; border: none; border-radius: 40px; font-weight: 800; font-family: inherit; font-size: 1.1rem; letter-spacing: 2px; cursor: pointer; box-shadow: 0 8px 25px rgba(212,175,55,0.4); transition: .3s; align-self: flex-start;">
+      Confirm My Adventure
+    </button>
+  </form>
+</section>
+
+<section id="confirmation" style="display: none; max-width: 680px; margin: 0 auto 100px; padding: 60px 36px; background: linear-gradient(135deg, #0a0e27, #0b1d36); border-radius: 28px; text-align: center; color: #fff; box-shadow: 0 30px 80px rgba(212,175,55,0.25); position: relative; overflow: hidden;">
+  <div style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 30%, rgba(212,175,55,0.15) 0%, transparent 70%); pointer-events: none; z-index: 0;"></div>
+  <div style="position: relative; z-index: 1;">
+    <h2 style="font-family: 'Cinzel Decorative', serif; font-size: 2.4rem; letter-spacing: 4px; color: var(--gold); margin-bottom: 16px;">Journey Confirmed!</h2>
+    <p style="font-size: 1.1rem; color: #ddd; line-height: 1.7;">Your adventure with <strong>Muskan Tiwari</strong> is locked. A confirmation email with itinerary, add-ons, and secret travel tips has been sent. Get ready for something extraordinary.</p>
+    <div style="margin-top: 28px; padding: 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; display: inline-block;">
+      <p style="font-size: .85rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase;">Booking Reference</p>
+      <p style="font-family: 'Cinzel Decorative', serif; font-size: 1.6rem; color: #fff; letter-spacing: 4px; margin-top: 4px;">ADV-2024-MT-777</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" style="margin-top: 80px;">
+  <div class="footer-brand">ADVENTOUR <span>by Muskan Tiwari</span></div>
+  <div style="margin-top: 10px; display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; font-size: .82rem;">
+    <a href="#" style="color: rgba(255,255,255,0.55); text-decoration: none;">Privacy Policy</a>
+    <a href="#" style="color: rgba(255,255,255,0.55); text-decoration: none;">Terms of Service</a>
+    <a href="#" style="color: rgba(255,255,255,0.55); text-decoration: none;">Cancellation Policy</a>
+    <a href="#" style="color: rgba(255,255,255,0.55); text-decoration: none;">Refund Policy</a>
+  </div>
+  <div style="margin-top: 16px; display: flex; justify-content: center; gap: 18px;">
+    <a href="#" aria-label="Instagram" style="color: var(--gold); text-decoration: none;">Instagram</a>
+    <a href="#" aria-label="Facebook" style="color: var(--gold); text-decoration: none;">Facebook</a>
+    <a href="#" aria-label="Twitter" style="color: var(--gold); text-decoration: none;">Twitter</a>
+    <a href="#" aria-label="LinkedIn" style="color: var(--gold); text-decoration: none;">LinkedIn</a>
+  </div>
+  <div class="end">Copyright &copy; 2024 Adventour by Muskan Tiwari. All Rights Reserved.</div>
+</footer>
+
+<script>
+  function showConfirmation() {
+    const form = document.getElementById('travelForm');
+    const confirm = document.getElementById('confirmation');
+    form.style.display = 'none';
+    confirm.style.display = 'block';
+    confirm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  // Prefill from URL params
+  const params = new URLSearchParams(window.location.search);
+  const pkg = params.get('pkg');
+  const price = params.get('price');
+  const dest = params.get('dest');
+  if (pkg) {
+    const form = document.getElementById('travelForm');
+    const headerText = document.createElement('div');
+    headerText.innerHTML = '<h3 style="font-family: Cinzel Decorative; color: var(--deep-navy); margin-bottom: 4px;">Booking Package: ' + pkg + '</h3><p style="color: #777; font-size: .9rem;">Reference Price: Rs. ' + (price || '') + '</p>';
+    form.insertBefore(headerText, form.firstChild);
+  }
+  if (dest) {
+    const destSelect = document.getElementById('destination');
+    if (destSelect) {
+      for (let i = 0; i < destSelect.options.length; i++) {
+        if (destSelect.options[i].value.includes(dest) || destSelect.options[i].text.includes(dest)) {
+          destSelect.selectedIndex = i; break;
+        }
+      }
+    }
+  }
+  document.getElementById('navbar').addEventListener('scroll', () => {
+    if (window.scrollY > 60) document.getElementById('navbar').classList.add('scrolled'); else document.getElementById('navbar').classList.remove('scrolled');
+  });
+</script>
+</body>
+</html>

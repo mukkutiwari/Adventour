@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --gold: #d4af37;
+  --gold-light: #f0e68c;
+  --deep-navy: #0a0e27;
+  --ocean: #0b1d36;
+  --soft-white: #f8f6f2;
+  --text-dark: #1a1a2e;
+  --glass: rgba(255,255,255,0.08);
+  --glass-border: rgba(255,255,255,0.15);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--soft-white); color: var(--text-dark); overflow-x:hidden; }
+
+/* Hero */
+.hero {
+  position: relative; height: 100vh; min-height: 680px;
+  background: linear-gradient(135deg, rgba(10,14,39,0.88) 0%, rgba(11,29,54,0.82) 60%, rgba(10,14,39,0.92) 100%),
+              url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80') center/cover no-repeat;
+  display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;
+}
+.hero::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(circle at 50% 30%, rgba(212,175,55,0.12) 0%, transparent 70%);
+  z-index:1; pointer-events:none;
+}
+.hero-content { position:relative; z-index:2; max-width: 900px; padding: 0 24px; }
+.hero-brand { font-family: 'Cinzel Decorative', serif; letter-spacing: 10px; font-size: clamp(3rem, 9vw, 7.5rem); color: #fff; text-shadow: 0 4px 30px rgba(212,175,55,0.35); line-height: 1.05; margin-bottom: 8px; }
+.hero-sub { color: var(--gold-light); font-size: 1.15rem; letter-spacing: 5px; font-weight: 300; text-transform: uppercase; margin-bottom: 16px; }
+.hero-tagline { color: rgba(255,255,255,0.85); font-size: 1.25rem; font-weight: 300; line-height: 1.6; max-width: 640px; margin: 0 auto 36px; }
+.hero-cta { display:inline-block; padding: 16px 40px; border: 1.5px solid var(--gold); color: var(--gold); text-decoration:none; border-radius: 40px; font-weight: 600; letter-spacing: 2px; transition: all .35s ease; background: rgba(212,175,55,0.06); }
+.hero-cta:hover { background: var(--gold); color: var(--deep-navy); box-shadow: 0 10px 30px rgba(212,175,55,0.35); transform: translateY(-3px); }
+
+/* Nav */
+.site-nav { position: fixed; top: 0; left:0; right:0; z-index: 100; padding: 22px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(10,14,39,0.35); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.08); transition: .3s; }
+.site-nav.scrolled { background: rgba(10,14,39,0.92); padding: 16px 60px; }
+.logo-title { font-family: 'Cinzel Decorative', serif; color: #fff; font-size: 1.35rem; letter-spacing: 4px; text-decoration: none; }
+.logo-title span { color: var(--gold); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: .9rem; font-weight: 500; letter-spacing: .5px; transition: color .25s; position: relative; }
+.nav-links a::after { content:''; position: absolute; bottom: -4px; left: 50%; width: 0; height: 1.5px; background: var(--gold); transition: .3s; transform: translateX(-50%); }
+.nav-links a:hover { color: #fff; }
+.nav-links a:hover::after { width: 70%; }
+
+/* Sections */
+.section-padding { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+.section-title { font-family: 'Cinzel Decorative', serif; font-size: clamp(2rem, 5vw, 3.2rem); text-align: center; color: var(--deep-navy); margin-bottom: 60px; position: relative; }
+.section-title::after { content:''; display: block; width: 60px; height: 3px; background: var(--gold); margin: 20px auto 0; border-radius: 2px; }
+
+/* Services */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
+.service-card { background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 20px; padding: 36px 24px; text-align: center; transition: all .35s ease; box-shadow: 0 8px 30px rgba(10,14,39,0.04); }
+.service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(10,14,39,0.08); border-color: rgba(212,175,55,0.3); }
+.service-card img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; margin-bottom: 20px; border: 3px solid var(--gold); box-shadow: 0 6px 20px rgba(212,175,55,0.15); }
+.service-card h4 { font-family: 'Cinzel Decorative', serif; font-size: 1.15rem; margin-bottom: 6px; color: var(--deep-navy); }
+.service-card p { color: #666; font-size: .92rem; }
+
+/* Packages */
+.packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+.pkg-card { background: #fff; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 35px rgba(10,14,39,0.06); transition: .35s; text-decoration: none; color: inherit; border: 1px solid rgba(0,0,0,0.04); }
+.pkg-card:hover { transform: translateY(-10px); box-shadow: 0 22px 55px rgba(10,14,39,0.12); }
+.pkg-card .pkg-img { height: 240px; overflow: hidden; position: relative; }
+.pkg-card .pkg-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+.pkg-card:hover .pkg-img img { transform: scale(1.06); }
+.pkg-card .pkg-price { position: absolute; bottom: 16px; right: 16px; background: var(--gold); color: var(--deep-navy); padding: 6px 18px; border-radius: 20px; font-weight: 700; font-size: .85rem; letter-spacing: .5px; box-shadow: 0 4px 14px rgba(212,175,55,0.35); }
+.pkg-card .pkg-body { padding: 24px; }
+.pkg-card .pkg-body h3 { font-family: 'Cinzel Decorative', serif; font-size: 1.05rem; margin-bottom: 6px; color: var(--deep-navy); }
+.pkg-card .pkg-body p { color: #777; font-size: .88rem; }
+
+/* Locations */
+.locations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.loc-card { position: relative; height: 280px; border-radius: 20px; overflow: hidden; display: block; text-decoration: none; box-shadow: 0 8px 25px rgba(10,14,39,0.08); }
+.loc-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.loc-card:hover img { transform: scale(1.08); }
+.loc-card .loc-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,14,39,0.85) 30%, transparent 70%); display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; }
+.loc-card h3 { color: #fff; font-family: 'Cinzel Decorative', serif; font-size: 1.2rem; margin-bottom: 4px; }
+.loc-card span { color: var(--gold-light); font-size: .85rem; letter-spacing: 2px; text-transform: uppercase; }
+
+/* FAQ */
+.faq-section { background: linear-gradient(135deg, var(--ocean), var(--deep-navy)); color: #fff; border-radius: 24px; padding: 60px 40px; }
+.faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 24px 0; }
+.faq-item h4 { font-family: 'Cinzel Decorative', serif; font-size: 1.1rem; color: var(--gold-light); margin-bottom: 8px; }
+.faq-item p { color: rgba(255,255,255,0.7); line-height: 1.6; font-size: .95rem; }
+
+/* Newsletter */
+.newsletter { background: linear-gradient(135deg, #0b1d36, #0a0e27); border-radius: 24px; padding: 60px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 30px; color: #fff; }
+.newsletter h3 { font-family: 'Cinzel Decorative', serif; font-size: 1.6rem; margin-bottom: 8px; }
+.newsletter p { color: rgba(255,255,255,0.7); }
+.newsletter-form { display: flex; gap: 0; }
+.newsletter-form input { padding: 14px 22px; border: none; border-radius: 30px 0 0 30px; outline: none; width: 260px; font-family: inherit; }
+.newsletter-form button { padding: 14px 28px; border: none; border-radius: 0 30px 30px 0; background: var(--gold); color: var(--deep-navy); font-weight: 700; cursor: pointer; transition: .3s; }
+.newsletter-form button:hover { background: var(--gold-light); }
+
+/* Footer */
+.site-footer { background: #030714; color: rgba(255,255,255,0.6); padding: 60px 40px 30px; text-align: center; }
+.footer-brand { font-family: 'Cinzel Decorative', serif; color: #fff; font-size: 1.6rem; letter-spacing: 4px; margin-bottom: 8px; }
+.footer-brand span { color: var(--gold); }
+.site-footer .end { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 30px; padding-top: 20px; font-size: .82rem; color: rgba(255,255,255,0.35); }
+
+/* Small fixes */
+@media (max-width: 768px) {
+  .site-nav { padding: 16px 20px; }
+  .nav-links { gap: 14px; font-size: .82rem; }
+  .hero-brand { letter-spacing: 6px; }
+}

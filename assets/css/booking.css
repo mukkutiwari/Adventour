@@ -1,0 +1,7 @@
+* { box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; margin: 0; background: #fff; color: #333; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px; background: rgba(0,0,0,0.85); position: fixed; top: 0; width: 100%; z-index: 100; }
+nav img { width: 140px; height: auto; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav ul li a { color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s; }
+nav ul li a:hover { color: #ffd700; }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Adventour by Muskan Tiwari</title>
+<link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body style="background: linear-gradient(180deg, #f8f6f2 0%, #fff 100%); min-height: 100vh;">
+
+<nav class="site-nav" id="navbar">
+  <a href="./index.html" class="logo-title">ADVENTOUR <span>by Muskan Tiwari</span></a>
+  <ul class="nav-links">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./index.html#packages">Packages</a></li>
+    <li><a href="./index.html#locations">Locations</a></li>
+    <li><a href="./info.html">About</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header style="height: 55vh; background: linear-gradient(135deg, rgba(10,14,39,0.88) 0%, rgba(11,29,54,0.92) 100%), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1600&q=80') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; position: relative;">
+  <div style="position: relative; z-index: 2; padding: 0 24px;">
+    <h1 style="font-family: 'Cinzel Decorative', serif; font-size: clamp(2.5rem, 7vw, 5rem); letter-spacing: 8px; text-shadow: 0 4px 30px rgba(212,175,55,0.35);">About Adventour</h1>
+    <p style="color: rgba(255,255,255,0.85); max-width: 600px; margin: 16px auto 0; font-size: 1.1rem; font-weight: 300;">Designed and developed by <strong>Muskan Tiwari</strong> for college submission.</p>
+  </div>
+</header>
+
+<section style="max-width: 900px; margin: -60px auto 80px; padding: 60px 40px; background: #fff; border-radius: 24px; box-shadow: 0 25px 60px rgba(10,14,39,0.08); position: relative; z-index: 3;">
+  <h2 style="font-family: 'Cinzel Decorative', serif; font-size: 2rem; text-align: center; color: var(--deep-navy); margin-bottom: 28px;">Meet Muskan Tiwari</h2>
+  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Muskan Tiwari" style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 28px; border: 4px solid var(--gold); box-shadow: 0 8px 30px rgba(212,175,55,0.25);" />
+  <p style="line-height: 1.8; color: #444; text-align: center; font-size: 1.05rem; max-width: 640px; margin: 0 auto 16px;">Adventour is an open travel project developed by <strong>Muskan Tiwari</strong> using HTML, CSS, and JavaScript. The site showcases budget-friendly travel packages, beautiful destinations, and a clean modern design built for demonstration.</p>
+  <p style="line-height: 1.8; color: #555; text-align: center; font-size: .95rem; max-width: 640px; margin: 0 auto;">Our mission is to make travel accessible and exciting through curated experiences, guided services, and seamless booking flows.</p>
+  <div style="text-align: center; margin-top: 32px;">
+    <a href="./contact.html" style="display: inline-block; padding: 12px 32px; background: var(--gold); color: var(--deep-navy); border-radius: 30px; text-decoration: none; font-weight: 700; letter-spacing: .5px; transition: .3s;">Get in Touch</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-brand">ADVENTOUR <span>by Muskan Tiwari</span></div>
+  <div class="end">Copyright &copy; 2024 Adventour by Muskan Tiwari. All Rights Reserved.</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+  });
+</script>
+</body>
+</html>
