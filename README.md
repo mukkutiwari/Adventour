@@ -9,7 +9,7 @@ Adventour is an open-source project; we welcome you to explore its codebase and 
 
 <div align="center">
   <br />
-  <a href="https://adventourmukku.netlify.app//"><strong>➥ Live Demo</strong></a>
+  <a href="https://mukkutiwari.github.io/Adventour"><strong>➥ Live Demo</strong></a>
 </div>
 
 ## Screeshot
